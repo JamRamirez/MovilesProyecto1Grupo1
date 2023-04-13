@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var civil: EditText
     lateinit var direccion: EditText
     lateinit var registrar:Button
-    lateinit var pickerButton: Button
+    lateinit var etDate:EditText
+    lateinit var cumple:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,17 +39,10 @@ class MainActivity : AppCompatActivity() {
         civil = findViewById(R.id.editTxtCivil)
         direccion = findViewById(R.id.editTxtDireccion)
         registrar = findViewById(R.id.btnRegistrar)
-        pickerButton = findViewById(R.id.datePickerButton)
+        etDate = findViewById(R.id.etDate)
+        cumple = "Null"
 
-        /*Recolectando la Fecha de HOY para mostrarlo en pantalla*/
-        var today = Calendar.getInstance()
-        var dateString: String?
-        var monthString = today.get(Calendar.MONTH) + 1
-        var yearString = today.get(Calendar.YEAR)
-        var dayString = today.get(Calendar.DAY_OF_MONTH)
-        dateString = "$monthString/$dayString/$yearString"
-
-        pickerButton.setText(dateString)
+        etDate.setOnClickListener{ showDatePickerDialog()}
 
         cedula.setOnFocusChangeListener{ v : View, hasFocus->
             if(!hasFocus && noData(cedula)){
@@ -88,6 +82,17 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun showDatePickerDialog() {
+        val datePicker = DatePickerFragment({day, month, year -> onDateSelected(day, month, year)})
+
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+
+    fun onDateSelected(day:Int, month:Int, year: Int){
+        etDate.setText("$month/$day/$year")
+        cumple = "$month/$day/$year"
+    }
+
     private fun noData(editText: EditText) : Boolean {
         return editText.text.toString().isEmpty()
     }
@@ -113,7 +118,7 @@ class MainActivity : AppCompatActivity() {
             direccion.setError("ERROR1, Este campo debe ser llenado!")
         }
 
-        if (cedula.error != null || nombre.error != null || salario.error != null || telefono.error != null || civil.error != null || direccion.error != null) {
+        if (cedula.error != null || nombre.error != null || salario.error != null || telefono.error != null || civil.error != null || direccion.error != null || cumple == "Null") {
             Toast.makeText(this, "Por favor, corrija los errores antes de continuar", Toast.LENGTH_SHORT).show()
             return
         }

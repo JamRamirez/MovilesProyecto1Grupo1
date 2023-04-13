@@ -91,33 +91,6 @@
 
 
     <Button
-        android:id="@+id/datePickerButton"
-        style="?android:spinnerStyle"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:onClick="pickerOpen"
-        android:text="JAN 01 2023"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="524dp"
-        android:text="Fecha de Nacimiento:"
-        android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/btnRegistrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -125,6 +98,18 @@
         android:layout_marginTop="124dp"
         android:onClick="registrar"
         android:text="Registrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtDireccion" />
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="218dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="12dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:hint="Fecha de Nacimiento"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTxtDireccion" />
 
