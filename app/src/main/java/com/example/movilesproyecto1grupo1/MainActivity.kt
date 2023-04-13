@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var registrar:Button
     lateinit var etDate:EditText
     lateinit var cumple:String
+    lateinit var clienteDBHelper: MyDatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         registrar = findViewById(R.id.btnRegistrar)
         etDate = findViewById(R.id.etDate)
         cumple = "Null"
+        clienteDBHelper = MyDatabaseHelper(this)
 
         etDate.setOnClickListener{ showDatePickerDialog()}
 
@@ -123,7 +125,17 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        Toast.makeText(this, "EXITO", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "EXITO Cedula"+ cedula.text.toString(), Toast.LENGTH_LONG).show()
+
+        var dbCed = cedula.text.toString().toInt()
+        var dbNom = nombre.text.toString()
+        var dbsal = salario.text.toString().toInt()
+        var dbTel = telefono.toString()
+        var dbCiv = civil.toString()
+        var dbDir = direccion.toString()
+
+        this.clienteDBHelper.addCliente(dbCed, dbNom, dbsal,dbTel, dbCiv,dbDir, cumple)
+
 
     }
 
