@@ -3,6 +3,7 @@ package com.example.movilesproyecto1grupo1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.content.Intent
 
 class Administrative : AppCompatActivity() {
 
@@ -17,16 +18,21 @@ class Administrative : AppCompatActivity() {
         btnAddClient = findViewById<Button>(R.id.btnAddClient)
         btnAssignLoan = findViewById<Button>(R.id.btnAssignLoan)
         btnLogout = findViewById<Button>(R.id.btnLogout)
+
         btnAddClient.setOnClickListener {
-            // Acción para el botón de Agregar un cliente nuevo
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         btnAssignLoan.setOnClickListener {
-            // Acción para el botón de Asignar un Préstamo a un cliente
+            // Acción para el botón de Asignar un Préstamo a un cliente, esperar a que verifiquemos cm se va a gestionar
         }
 
         btnLogout.setOnClickListener {
-            // Acción para el botón de Cerrar sesión
+            val intent = Intent(this,Home::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
