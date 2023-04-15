@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Administrative"
+    android:background="#015c56">
+
+    <Button
+        android:id="@+id/btnAddClient"
+        android:layout_width="330dp"
+        android:layout_height="75dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="152dp"
+        android:background="#f5812b"
+        android:text="Agregar un cliente nuevo"
+        android:textColor="#f1c9a0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAssignLoan"
+        android:layout_width="330dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/btnAddClient"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="316dp"
+        android:background="#f5812b"
+        android:text="Asignar un Préstamo a un cliente "
+        android:textColor="#f1c9a0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="326dp"
+        android:layout_height="68dp"
+        android:layout_below="@+id/btnAssignLoan"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="484dp"
+        android:background="#f5812b"
+        android:text="Cerrar sesión"
+        android:textColor="#f1c9a0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
