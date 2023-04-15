@@ -13,7 +13,7 @@ class Administrative : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_administrative)
 
         btnAddClient = findViewById<Button>(R.id.btnAddClient)
         btnAssignLoan = findViewById<Button>(R.id.btnAssignLoan)
