@@ -6,17 +6,14 @@ package com.example.movilesproyecto1grupo1
 *  Fabiana Barrantes Li
 */
 
-import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.Toast
-import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class Cliente : AppCompatActivity() {
 
     lateinit var cedula: EditText
     lateinit var nombre: EditText

@@ -20,7 +20,7 @@ class Administrative : AppCompatActivity() {
         btnLogout = findViewById<Button>(R.id.btnLogout)
 
         btnAddClient.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,Cliente::class.java)
             startActivity(intent)
             finish()
         }
@@ -30,7 +30,7 @@ class Administrative : AppCompatActivity() {
         }
 
         btnLogout.setOnClickListener {
-            val intent = Intent(this,Home::class.java)
+            val intent = Intent(this,IniciarSesion::class.java)
             startActivity(intent)
             finish()
         }
