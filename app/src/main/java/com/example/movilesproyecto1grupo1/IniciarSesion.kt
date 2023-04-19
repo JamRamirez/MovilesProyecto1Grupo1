@@ -18,7 +18,7 @@ class IniciarSesion : AppCompatActivity() {
         iniciaSesion = findViewById(R.id.btnIniciaSesion)
         usern = findViewById(R.id.username)
         passw = findViewById(R.id.password)
-        val helper = IniciaSesionHelperDB(applicationContext)
+        val helper = MyDatabaseHelper(applicationContext)
         val db = helper.readableDatabase
 
 
