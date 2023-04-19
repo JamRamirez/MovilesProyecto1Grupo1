@@ -9,7 +9,7 @@ class IniciaSesionHelperDB(context: Context) : SQLiteOpenHelper(context,"Proyect
         db?.execSQL("CREATE TABLE USUARIO( ID INTEGER PRIMARY KEY AUTOINCREMENT, USERNAME TEXT, PASSWORD TEXT,PRIVILEGIO TEXT, ESTADO INTEGER)")
         db?.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('marlenbadilla','mar123','administrador',1)")
         db?.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('jamramirez','jam456','administrador',1)")
-        db?.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILlenEGIO,ESTADO) VALUES('fabianali','fabi789','administrador',1)")
+        db?.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILlEGIO,ESTADO) VALUES('fabianali','fabi789','administrador',1)")
         db?.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('joseflores','jose456','cliente',1)")
     }
 

@@ -18,15 +18,15 @@ class IniciarSesion : AppCompatActivity() {
         iniciaSesion = findViewById(R.id.btnIniciaSesion)
         usern = findViewById(R.id.username)
         passw = findViewById(R.id.password)
-        var helper = IniciaSesionHelperDB(applicationContext)
-        var db = helper.readableDatabase
+        val helper = IniciaSesionHelperDB(applicationContext)
+        val db = helper.readableDatabase
 
 
 
         iniciaSesion.setOnClickListener {
-            var args= listOf<String>(usern.text.toString(),passw.text.toString()).toTypedArray()
-            var rs = db. rawQuery("SELECT * FROM USUARIO WHERE USERNAME=? AND PASSWORD=? AND PRIVILEGIO ='administrador' AND ESTADO=1",args)
-            var rsc = db. rawQuery("SELECT * FROM USUARIO WHERE USERNAME=? AND PASSWORD=? AND PRIVILEGIO ='cliente' AND ESTADO=1",args)
+            val args= listOf<String>(usern.text.toString(),passw.text.toString()).toTypedArray()
+            val rs = db. rawQuery("SELECT * FROM USUARIO WHERE USERNAME=? AND PASSWORD=? AND PRIVILEGIO ='administrador' AND ESTADO=1",args)
+            val rsc = db. rawQuery("SELECT * FROM USUARIO WHERE USERNAME=? AND PASSWORD=? AND PRIVILEGIO ='cliente' AND ESTADO=1",args)
             if(rs.moveToNext()){
                 Toast.makeText(applicationContext,"Usuario Administrativo",Toast.LENGTH_LONG).show()
                 //startActivity(Intent(this,Administrative::class.java))
@@ -34,7 +34,7 @@ class IniciarSesion : AppCompatActivity() {
             }
             if(rsc.moveToNext()){
                 Toast.makeText(applicationContext,"Cliente",Toast.LENGTH_LONG).show()
-                //startActivity(Intent(this,Cliente::class.java))
+                 startActivity(Intent(this,PrincipalCliente::class.java))
 
             }else{
                 Toast.makeText(applicationContext,"El usuario no existe",Toast.LENGTH_LONG).show()

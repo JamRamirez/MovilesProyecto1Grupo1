@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GestionarAhorros">
+
+    <TextView
+        android:id="@+id/Ahorros"
+        android:layout_width="209dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="48dp"
+        android:text="MIS AHORROS"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/cuota"
+        android:layout_width="230dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Agregar cuota"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="247dp"
+        android:layout_height="277dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Ahorros">
+
+        <RadioButton
+            android:id="@+id/navideno"
+            android:layout_width="223dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="32dp"
+            android:text="Navideño" />
+
+        <RadioButton
+            android:id="@+id/escolar"
+            android:layout_width="223dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="4dp"
+            android:text="Escolar" />
+
+        <RadioButton
+            android:id="@+id/marchamo"
+            android:layout_width="223dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:text="Marchamo" />
+
+        <RadioButton
+            android:id="@+id/extraordinario"
+            android:layout_width="225dp"
+            android:layout_height="49dp"
+            android:text="Extraordinario" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnAceptar"
+        android:layout_width="186dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="40dp"
+        android:text="Aceptar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cuota" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PrincipalCliente">
+
+    <Button
+        android:id="@+id/btnPrestamos"
+        android:layout_width="210dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="136dp"
+        android:text="Ver prestamos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnGestionAhorros"
+        android:layout_width="209dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="76dp"
+        android:text="Gestionar Ahorros"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPrestamos" />
+
+    <Button
+        android:id="@+id/btnCuota"
+        android:layout_width="201dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="56dp"
+        android:text="Calcular cuota"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGestionAhorros" />
+
+    <Button
+        android:id="@+id/btnIformacionPersonal"
+        android:layout_width="200dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="56dp"
+        android:text="Informacion Personal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.587"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCuota" />
+</androidx.constraintlayout.widget.ConstraintLayout>
