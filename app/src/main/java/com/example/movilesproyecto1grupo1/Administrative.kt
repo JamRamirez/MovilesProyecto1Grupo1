@@ -26,7 +26,9 @@ class Administrative : AppCompatActivity() {
         }
 
         btnAssignLoan.setOnClickListener {
-            // Acción para el botón de Asignar un Préstamo a un cliente, esperar a que verifiquemos cm se va a gestionar
+            val intent = Intent(this,AsignarPrestamo::class.java)
+            startActivity(intent)
+            finish()
         }
 
         btnLogout.setOnClickListener {

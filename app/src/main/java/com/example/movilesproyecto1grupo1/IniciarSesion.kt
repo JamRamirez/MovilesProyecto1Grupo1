@@ -1,5 +1,11 @@
 package com.example.movilesproyecto1grupo1
 
+/* Estudiantes:
+*  Jam Carlos Ramirez Chaves
+*  Marlen Badilla Campos
+*  Fabiana Barrantes Li
+*/
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,7 +35,7 @@ class IniciarSesion : AppCompatActivity() {
             val rsc = db. rawQuery("SELECT * FROM USUARIO WHERE USERNAME=? AND PASSWORD=? AND PRIVILEGIO ='cliente' AND ESTADO=1",args)
             if(rs.moveToNext()){
                 Toast.makeText(applicationContext,"Usuario Administrativo",Toast.LENGTH_LONG).show()
-                //startActivity(Intent(this,Administrative::class.java))
+                startActivity(Intent(this,Administrative::class.java))
 
             }
             if(rsc.moveToNext()){

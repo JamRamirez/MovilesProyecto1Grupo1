@@ -12,24 +12,29 @@
         android:theme="@style/Theme.MovilesProyecto1Grupo1"
         tools:targetApi="31">
         <activity
-            android:name=".InformacionPersonal"
+            android:name=".AsignarPrestamo"
             android:exported="false" />
-        <activity
-            android:name=".GestionarAhorros"
-            android:exported="false" />
-        <activity
-            android:name=".PrincipalCliente"
-            android:exported="false" />
-        <activity android:name=".Cliente" />
         <activity
             android:name=".IniciarSesion"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PrincipalCliente"
+            android:exported="false" />
+        <activity android:name=".Cliente" />
+        <activity
+            android:name=".Administrative"
+            android:exported="false" />
+        <activity
+            android:name=".InformacionPersonal"
+            android:exported="false" />
+        <activity
+            android:name=".GestionarAhorros"
+            android:exported="false" />
     </application>
 
 </manifest>

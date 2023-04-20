@@ -45,18 +45,20 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
     }
 
     fun addCliente(cedula: Int, nombre: String, salario: Int, telefono: String, civil: String, direccion: String, nacimiento: String){
-        val datos = ContentValues()
-        datos.put(COLUMN_CEDULA, cedula)
-        datos.put(COLUMN_NOMBRE, nombre)
-        datos.put(COLUMN_SALARIO, salario)
-        datos.put(COLUMN_TELEFONO, telefono)
-        datos.put(COLUMN_CIVIL, civil)
-        datos.put(COLUMN_DIRECCION, direccion)
-        datos.put(COLUMN_NACIMIENTO, nacimiento)
+        val cedulaString = cedula.toString()
+        val datosCliente = ContentValues()
+        datosCliente.put(COLUMN_CEDULA, cedula)
+        datosCliente.put(COLUMN_NOMBRE, nombre)
+        datosCliente.put(COLUMN_SALARIO, salario)
+        datosCliente.put(COLUMN_TELEFONO, telefono)
+        datosCliente.put(COLUMN_CIVIL, civil)
+        datosCliente.put(COLUMN_DIRECCION, direccion)
+        datosCliente.put(COLUMN_NACIMIENTO, nacimiento)
 
         val db = this.writableDatabase
 
-        db.insert(TABLE_NAME, null, datos)
+        db.insert(TABLE_NAME, null, datosCliente)
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('" + nombre + "', '" + cedulaString + "', 'cliente', 1)")
         db.close()
     }
 

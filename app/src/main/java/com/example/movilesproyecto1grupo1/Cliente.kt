@@ -1,11 +1,5 @@
 package com.example.movilesproyecto1grupo1
 
-/* Estudiantes:
-*  Jam Carlos Ramirez Chaves
-*  Marlen Badilla Campos
-*  Fabiana Barrantes Li
-*/
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -122,7 +116,7 @@ class Cliente : AppCompatActivity() {
             return
         }
 
-        Toast.makeText(this, "EXITO Cedula"+ cedula.text.toString(), Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "EXITO Cedula: "+ cedula.text.toString(), Toast.LENGTH_LONG).show()
 
         var dbCed = cedula.text.toString().toInt()
         var dbNom = nombre.text.toString()

@@ -7,46 +7,58 @@
     tools:context=".PrincipalCliente">
 
     <Button
-        android:id="@+id/btnPrestamos"
+        android:id="@+id/btnIformacionPersonal"
         android:layout_width="210dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="136dp"
-        android:text="Ver prestamos"
+        android:layout_height="72dp"
+        android:layout_marginTop="44dp"
+        android:text="Informacion Personal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCuota" />
 
     <Button
         android:id="@+id/btnGestionAhorros"
-        android:layout_width="209dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="76dp"
+        android:layout_width="210dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="44dp"
         android:text="Gestionar Ahorros"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPrestamos" />
 
     <Button
+        android:id="@+id/btnPrestamos"
+        android:layout_width="210dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="156dp"
+        android:text="Ver prestamos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/btnCuota"
-        android:layout_width="201dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="210dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="36dp"
         android:text="Calcular cuota"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnGestionAhorros" />
 
-    <Button
-        android:id="@+id/btnIformacionPersonal"
-        android:layout_width="200dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="56dp"
-        android:text="Informacion Personal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.587"
+    <TextView
+        android:id="@+id/txtPantallaTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="60dp"
+        android:text="Pantalla Principal Cliente"
+        android:textColor="@color/black"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCuota" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
