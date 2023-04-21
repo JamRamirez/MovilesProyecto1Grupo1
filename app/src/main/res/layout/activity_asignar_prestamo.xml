@@ -18,4 +18,26 @@
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edTxtCedula"
+        android:layout_width="210dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="152dp"
+        android:ems="10"
+        android:hint="Cedula del Cliente"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPrestamoTitle" />
+
+    <Button
+        android:id="@+id/btnContinuar"
+        android:layout_width="131dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="112dp"
+        android:text="Continuar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTxtCedula" />
 </androidx.constraintlayout.widget.ConstraintLayout>
