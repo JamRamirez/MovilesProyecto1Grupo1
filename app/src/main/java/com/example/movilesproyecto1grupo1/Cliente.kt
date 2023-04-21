@@ -121,9 +121,9 @@ class Cliente : AppCompatActivity() {
         var dbCed = cedula.text.toString().toInt()
         var dbNom = nombre.text.toString()
         var dbsal = salario.text.toString().toInt()
-        var dbTel = telefono.toString()
-        var dbCiv = civil.toString()
-        var dbDir = direccion.toString()
+        var dbTel = telefono.text.toString()
+        var dbCiv = civil.text.toString()
+        var dbDir = direccion.text.toString()
 
         this.clienteDBHelper.addCliente(dbCed, dbNom, dbsal,dbTel, dbCiv,dbDir, cumple)
 

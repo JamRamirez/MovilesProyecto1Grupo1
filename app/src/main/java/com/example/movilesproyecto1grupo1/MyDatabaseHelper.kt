@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
-        private const val DATABASE_VERSION = 8
+        private const val DATABASE_VERSION = 9
         private const val DATABASE_NAME = "Proyecto1Grupo1.db"
 
         private const val TABLE_NAME = "cliente"
@@ -29,7 +29,7 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
                     "$COLUMN_CIVIL TEXT, $COLUMN_DIRECCION TEXT, $COLUMN_NACIMIENTO TEXT);"
         db.execSQL(query)
         db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
-                "VALUES('111','joseflores','100000','84748474','Soltero','Heredia, Costa Rica','01/01/1980')")
+                "VALUES('111','joseflores','100000','84748474','Soltero','Heredia, Costa Rica','1/1/1980')")
 
         //Tabla USUARIO
         db.execSQL("CREATE TABLE USUARIO( ID INTEGER PRIMARY KEY AUTOINCREMENT, USERNAME TEXT, PASSWORD TEXT,PRIVILEGIO TEXT, ESTADO INTEGER)")
