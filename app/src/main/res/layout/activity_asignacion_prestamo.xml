@@ -7,12 +7,172 @@
     tools:context=".AsignacionPrestamo">
 
     <TextView
-        android:id="@+id/txtCed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="175dp"
-        android:layout_marginTop="265dp"
-        android:text="TextView"
+        android:id="@+id/txtTitulo"
+        android:layout_width="331dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:text="Asignación de Prestamo"
+        android:textColor="@color/black"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSalario"
+        android:layout_width="358dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="140dp"
+        android:text="Salario: ###"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rdGroupPeriodo"
+        android:layout_width="122dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTxtPrestamo">
+
+        <RadioButton
+            android:id="@+id/rdBut3Anio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="3 Años" />
+
+        <RadioButton
+            android:id="@+id/rdBut5Anio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="5 Años" />
+
+        <RadioButton
+            android:id="@+id/rdBut10Anio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="10 Años" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtPago"
+        android:layout_width="209dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="192dp"
+        android:text="Pago Mensual: ###"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCed"
+        android:layout_width="357dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="100dp"
+        android:text="Cedula: ###"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnConfirmar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="392dp"
+        android:onClick="continuar"
+        android:text="Confirmar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTxtPrestamo" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="392dp"
+        android:onClick="calcular"
+        android:text="Calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toEndOf="@+id/btnConfirmar"
+        app:layout_constraintTop_toBottomOf="@+id/edTxtPrestamo" />
+
+    <TextView
+        android:id="@+id/txtPeriodo"
+        android:layout_width="62dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="300dp"
+        android:text="Periodo:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPeriodo2"
+        android:layout_width="62dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="460dp"
+        android:text="Interes:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rdGroupInteres"
+        android:layout_width="208dp"
+        android:layout_height="192dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rdGroupPeriodo">
+
+        <RadioButton
+            android:id="@+id/radBtnHipotecario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Hipotecario: 7.5%" />
+
+        <RadioButton
+            android:id="@+id/radBtnEducacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Educación: 8%" />
+
+        <RadioButton
+            android:id="@+id/radBtnPersonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text=" Personal: 10%" />
+
+        <RadioButton
+            android:id="@+id/radBtnViajes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Viajes: 12%" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edTxtPrestamo"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="232dp"
+        android:ems="10"
+        android:hint="Credito"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

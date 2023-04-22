@@ -39,37 +39,37 @@ class Cliente : AppCompatActivity() {
 
         cedula.setOnFocusChangeListener{ v : View, hasFocus->
             if(!hasFocus && noData(cedula)){
-                cedula.setError("ERROR1, Este campo debe ser llenado!")
+                cedula.setError("Este campo debe ser llenado!")
             }
         }
 
         nombre.setOnFocusChangeListener{ v : View, hasFocus->
             if(!hasFocus && noData(nombre)){
-                nombre.setError("ERROR1, Este campo debe ser llenado!")
+                nombre.setError("Este campo debe ser llenado!")
             }
         }
 
         salario.setOnFocusChangeListener{ v : View, hasFocus->
             if(!hasFocus && noData(salario)){
-                salario.setError("ERROR1, Este campo debe ser llenado!")
+                salario.setError("Este campo debe ser llenado!")
             }
         }
 
         telefono.setOnFocusChangeListener{ v : View, hasFocus->
             if(!hasFocus && noData(telefono)){
-                telefono.setError("ERROR1, Este campo debe ser llenado!")
+                telefono.setError("Este campo debe ser llenado!")
             }
         }
 
         civil.setOnFocusChangeListener{ v : View, hasFocus->
             if(!hasFocus && noData(civil)){
-                civil.setError("ERROR1, Este campo debe ser llenado!")
+                civil.setError("Este campo debe ser llenado!")
             }
         }
 
         direccion.setOnFocusChangeListener{ v : View, hasFocus->
             if(!hasFocus && noData(direccion)){
-                direccion.setError("ERROR1, Este campo debe ser llenado!")
+                direccion.setError("Este campo debe ser llenado!")
             }
         }
 
@@ -93,22 +93,22 @@ class Cliente : AppCompatActivity() {
     fun registrar(vista: View){
 
         if(noData(cedula)){
-            cedula.setError("ERROR1, Este campo debe ser llenado!")
+            cedula.setError("Este campo debe ser llenado!")
         }
         if(noData(nombre)){
-            nombre.setError("ERROR1, Este campo debe ser llenado!")
+            nombre.setError("Este campo debe ser llenado!")
         }
         if(noData(salario)){
-            salario.setError("ERROR1, Este campo debe ser llenado!")
+            salario.setError("Este campo debe ser llenado!")
         }
         if(noData(telefono)){
-            telefono.setError("ERROR1, Este campo debe ser llenado!")
+            telefono.setError("Este campo debe ser llenado!")
         }
         if(noData(civil)){
-            civil.setError("ERROR1, Este campo debe ser llenado!")
+            civil.setError("Este campo debe ser llenado!")
         }
         if(noData(direccion)){
-            direccion.setError("ERROR1, Este campo debe ser llenado!")
+            direccion.setError("Este campo debe ser llenado!")
         }
 
         if (cedula.error != null || nombre.error != null || salario.error != null || telefono.error != null || civil.error != null || direccion.error != null || cumple == "Null") {

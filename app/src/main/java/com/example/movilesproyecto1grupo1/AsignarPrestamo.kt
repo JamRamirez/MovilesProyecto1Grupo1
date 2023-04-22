@@ -1,5 +1,6 @@
 package com.example.movilesproyecto1grupo1
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ class AsignarPrestamo : AppCompatActivity() {
     private lateinit var continuar: Button
     private lateinit var cedula: EditText
 
+    @SuppressLint("Range")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_asignar_prestamo)
@@ -25,10 +27,17 @@ class AsignarPrestamo : AppCompatActivity() {
             val selectionArgs = arrayOf(cedula.text.toString())
             val rs = db. rawQuery("SELECT * FROM cliente WHERE cliente_cedula = ?", selectionArgs)
 
-            if (rs.moveToNext()){
+            if (rs.moveToFirst()){
                 Toast.makeText(applicationContext,"Cliente Encontrado!",Toast.LENGTH_LONG).show()
                 val intent = Intent(this, AsignacionPrestamo::class.java).apply {
-                    putExtra("StringCedula", cedula.text.toString())
+
+                    val cedulaDB = rs.getString(rs.getColumnIndex("cliente_cedula"))
+                    val nombreDB = rs.getString(rs.getColumnIndex("cliente_nombre"))
+                    val salarioDB = rs.getString(rs.getColumnIndex("cliente_salario"))
+
+                    putExtra("StringCedula", cedulaDB)
+                    putExtra("StringNombre", nombreDB)
+                    putExtra("StringSalario", salarioDB)
                 }
                 startActivity(intent)
             }else{
