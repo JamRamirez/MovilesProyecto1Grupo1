@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AsignacionPrestamo">
+    tools:context=".AsignacionPrestamo"
+    android:background="#015c56">
 
     <TextView
         android:id="@+id/txtTitulo"
@@ -13,7 +14,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="28dp"
         android:text="Asignación de Prestamo"
-        android:textColor="@color/black"
+        android:textColor="#f1c8a0"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,6 +25,7 @@
         android:layout_height="27dp"
         android:layout_marginTop="140dp"
         android:text="Salario: ###"
+        android:textColor="#f1c8a0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
+            android:textColor="#f1c8a0"
             android:text="3 Años" />
 
         <RadioButton
@@ -50,6 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
+            android:textColor="#f1c8a0"
             android:text="5 Años" />
 
         <RadioButton
@@ -57,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
+            android:textColor="#f1c8a0"
             android:text="10 Años" />
     </RadioGroup>
 
@@ -66,6 +71,7 @@
         android:layout_height="21dp"
         android:layout_marginTop="192dp"
         android:text="Pago Mensual: ###"
+        android:textColor="#f1c8a0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -76,6 +82,7 @@
         android:layout_height="26dp"
         android:layout_marginTop="100dp"
         android:text="Cedula: ###"
+        android:textColor="#f1c8a0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -87,6 +94,9 @@
         android:layout_marginTop="392dp"
         android:onClick="continuar"
         android:text="Confirmar"
+        android:background="#f5812b"
+        android:textColor="#f1c8a0"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,6 +109,9 @@
         android:layout_marginTop="392dp"
         android:onClick="calcular"
         android:text="Calcular"
+        android:background="#f5812b"
+        android:textColor="#f1c8a0"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toEndOf="@+id/btnConfirmar"
@@ -111,6 +124,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="300dp"
         android:text="Periodo:"
+        android:textColor="#f1c8a0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -121,6 +135,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="460dp"
         android:text="Interes:"
+        android:textColor="#f1c8a0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -139,6 +154,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
+            android:textColor="#f1c8a0"
             android:text="Hipotecario: 7.5%" />
 
         <RadioButton
@@ -146,6 +162,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
+            android:textColor="#f1c8a0"
             android:text="Educación: 8%" />
 
         <RadioButton
@@ -153,6 +170,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
+            android:textColor="#f1c8a0"
             android:text=" Personal: 10%" />
 
         <RadioButton
@@ -160,6 +178,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
+            android:textColor="#f1c8a0"
             android:text="Viajes: 12%" />
     </RadioGroup>
 
@@ -171,7 +190,9 @@
         android:layout_marginTop="232dp"
         android:ems="10"
         android:hint="Credito"
+        android:textColorHint="#f1c8a0"
         android:inputType="number"
+        android:textColor="#f1c8a0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

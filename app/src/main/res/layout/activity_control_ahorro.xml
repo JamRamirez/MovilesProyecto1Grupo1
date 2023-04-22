@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ControlAhorro">
+    tools:context=".ControlAhorro"
+    android:background="#015c56">
 
     <EditText
         android:id="@+id/edUsuario"
@@ -24,6 +25,9 @@
         android:layout_height="62dp"
         android:layout_marginTop="92dp"
         android:text="Button"
+        android:background="#f5812b"
+        android:textColor="#f1c8a0"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

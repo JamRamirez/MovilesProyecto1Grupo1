@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InformacionPersonal">
-
+    tools:context=".InformacionPersonal"
+    android:background="#015c56">
     <Button
         android:id="@+id/btnConsultar"
         android:layout_width="263dp"
         android:layout_height="93dp"
         android:layout_marginTop="20dp"
         android:text="Consultar"
+        android:background="#f5812b"
+        android:textColor="#f1c8a0"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +55,7 @@
         android:text="Información de la cuenta"
         android:textAlignment="center"
         android:textSize="25sp"
+        android:textColor="#f1c8a0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="parent"

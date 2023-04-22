@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PrincipalCliente">
+    tools:context=".PrincipalCliente"
+    android:background="#015c56">
 
     <Button
         android:id="@+id/btnIformacionPersonal"
@@ -12,6 +13,9 @@
         android:layout_height="72dp"
         android:layout_marginTop="44dp"
         android:text="Informacion Personal"
+        android:background="#f5812b"
+        android:textColor="#f1c8a0"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +27,9 @@
         android:layout_height="72dp"
         android:layout_marginTop="44dp"
         android:text="Gestionar Ahorros"
+        android:background="#f5812b"
+        android:textColor="#f1c8a0"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +40,9 @@
         android:layout_width="210dp"
         android:layout_height="72dp"
         android:layout_marginTop="156dp"
+        android:background="#f5812b"
+        android:textColor="#f1c8a0"
+        android:textSize="17sp"
         android:text="Ver prestamos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -42,9 +52,12 @@
     <Button
         android:id="@+id/btnCuota"
         android:layout_width="210dp"
+        android:background="#f5812b"
         android:layout_height="72dp"
         android:layout_marginTop="36dp"
         android:text="Calcular cuota"
+        android:textColor="#f1c8a0"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
