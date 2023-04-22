@@ -7,22 +7,53 @@
     tools:context=".InformacionPersonal">
 
     <Button
-        android:id="@+id/btnModificar"
+        android:id="@+id/btnConsultar"
         android:layout_width="263dp"
         android:layout_height="93dp"
-        android:layout_marginTop="204dp"
-        android:text="Editar"
+        android:layout_marginTop="20dp"
+        android:text="Consultar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/vistaInformacion" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="279dp"
-        android:layout_height="127dp"
-        android:layout_marginTop="72dp"
-        android:text="Mostrando la informacion"
+        android:id="@+id/vistaInformacion"
+        android:layout_width="386dp"
+        android:layout_height="297dp"
+        android:layout_marginTop="28dp"
+        android:hint="informacion del cliente"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vistaTitulo" />
+
+    <EditText
+        android:id="@+id/user"
+        android:layout_width="266dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConsultar" />
+
+    <TextView
+        android:id="@+id/vistaTitulo"
+        android:layout_width="300dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="40dp"
+        android:text="Información de la cuenta"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

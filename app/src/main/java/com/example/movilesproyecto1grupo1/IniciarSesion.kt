@@ -33,15 +33,20 @@ class IniciarSesion : AppCompatActivity() {
             val args= listOf<String>(usern.text.toString(),passw.text.toString()).toTypedArray()
             val rs = db. rawQuery("SELECT * FROM USUARIO WHERE USERNAME=? AND PASSWORD=? AND PRIVILEGIO ='administrador' AND ESTADO=1",args)
             val rsc = db. rawQuery("SELECT * FROM USUARIO WHERE USERNAME=? AND PASSWORD=? AND PRIVILEGIO ='cliente' AND ESTADO=1",args)
+
+
             if(rs.moveToNext()){
                 Toast.makeText(applicationContext,"Usuario Administrativo",Toast.LENGTH_LONG).show()
                 startActivity(Intent(this,Administrative::class.java))
 
             }
             if(rsc.moveToNext()){
+                /*val intent = Intent(this,PrincipalCliente::class.java)
+                val dato = usern.text.toString()
+                intent.putExtra("username",dato)
+                 startActivity(intent)*/
                 Toast.makeText(applicationContext,"Cliente",Toast.LENGTH_LONG).show()
-                 startActivity(Intent(this,PrincipalCliente::class.java))
-
+                startActivity(Intent(this,PrincipalCliente::class.java))
             }else{
                 Toast.makeText(applicationContext,"El usuario no existe",Toast.LENGTH_LONG).show()
             }

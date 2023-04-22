@@ -12,13 +12,16 @@
         android:theme="@style/Theme.MovilesProyecto1Grupo1"
         tools:targetApi="31">
         <activity
+            android:name=".ControlAhorro"
+            android:exported="false" />
+        <activity
             android:name=".AsignacionPrestamo"
             android:exported="false"
-            android:parentActivityName=".AsignarPrestamo"/>
+            android:parentActivityName=".AsignarPrestamo" />
         <activity
             android:name=".AsignarPrestamo"
             android:exported="false"
-            android:parentActivityName=".Administrative"/>
+            android:parentActivityName=".Administrative" />
         <activity
             android:name=".IniciarSesion"
             android:exported="true">
