@@ -13,6 +13,8 @@ class InformacionPersonal : AppCompatActivity() {
     private lateinit var consulta: Button
     private lateinit var  user: EditText
     private lateinit var vista: TextView
+    private lateinit var edita: Button
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +24,7 @@ class InformacionPersonal : AppCompatActivity() {
         consulta = findViewById(R.id.btnConsultar)
         user = findViewById(R.id.user)
         vista = findViewById(R.id.vistaInformacion)
+        edita = findViewById(R.id.editar)
 
         val helper = MyDatabaseHelper(applicationContext)
         val db = helper.readableDatabase
@@ -51,5 +54,11 @@ class InformacionPersonal : AppCompatActivity() {
                 }
             }
         }
+        edita.setOnClickListener {
+            val intent = Intent(this,EditaCliente::class.java)
+            intent.putExtra("clave",user.text.toString())
+            startActivity(intent)
+        }
+
     }
 }

@@ -68,4 +68,18 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
         db.close()
     }
 
+    fun modifica(cedula: Int, nombre: String, salario: Int,telefono: String ,estado: String,direccion: String,nacimiento: String){
+        val args = arrayOf(cedula.toString())
+        val datos = ContentValues()
+        datos.put(COLUMN_NOMBRE, nombre)
+        datos.put(COLUMN_SALARIO, salario)
+        datos.put(COLUMN_TELEFONO, telefono)
+        datos.put(COLUMN_CIVIL, estado)
+        datos.put(COLUMN_DIRECCION, direccion)
+        datos.put(COLUMN_NACIMIENTO, nacimiento)
+        val db = this.writableDatabase
+        db.update("cliente",datos,"cliente_cedula = ?",args)
+        close()
+    }
+
 }

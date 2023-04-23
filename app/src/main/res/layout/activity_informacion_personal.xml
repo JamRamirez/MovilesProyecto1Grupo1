@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".InformacionPersonal"
     android:background="#015c56">
+
     <Button
         android:id="@+id/btnConsultar"
-        android:layout_width="263dp"
-        android:layout_height="93dp"
+        android:layout_width="262dp"
+        android:layout_height="92dp"
         android:layout_marginTop="20dp"
-        android:text="Consultar"
         android:background="#f5812b"
+        android:text="Consultar"
         android:textColor="#f1c8a0"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,4 +61,16 @@
         app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/editar"
+        android:layout_width="260dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="32dp"
+        android:text="Editar Info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
