@@ -5,15 +5,7 @@
     android:padding="16dp"
     android:background="#015c56"
     tools:context=".ControlAhorro">
-
-    <TextView
-        android:id="@+id/tvTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pantalla Principal Administrativa"
-        android:textSize="24sp"
-        android:gravity="center" />
-
+    
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="match_parent"
