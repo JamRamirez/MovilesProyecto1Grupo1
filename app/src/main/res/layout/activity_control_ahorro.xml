@@ -1,120 +1,52 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="#015c56"
     tools:context=".ControlAhorro">
-    
-    <TextView
-        android:id="@+id/tvTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pantalla Gestionar mis Ahorros"
-        android:textColor="#f1c8a0"
-        android:textSize="24sp"/>
-
-    <CheckBox
-        android:id="@+id/cbNavidena"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Navideño"
-        android:textColor="#f1c8a0"
-        android:layout_below="@id/tvTitulo"
-        android:layout_marginTop="16dp"/>
-
-    <CheckBox
-        android:id="@+id/cbEscolar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Escolar"
-        android:textColor="#f1c8a0"
-        android:layout_below="@id/cbNavidena"
-        android:layout_marginTop="16dp"/>
-
-    <CheckBox
-        android:id="@+id/cbMarchamo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Marchamo"
-        android:textColor="#f1c8a0"
-        android:layout_below="@id/cbEscolar"
-        android:layout_marginTop="16dp"/>
-
-    <CheckBox
-        android:id="@+id/cbExtraordinaria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Extraordinaria"
-        android:textColor="#f1c8a0"
-        android:layout_below="@id/cbMarchamo"
-        android:layout_marginTop="16dp"/>
 
     <EditText
-        android:id="@+id/etMonto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Monto"
-        android:textColorHint="#f1c8a0"
+        android:id="@+id/user"
+        android:layout_width="349dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="124dp"
+        android:ems="10"
+        android:hint="Verifique su cedula"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
         android:textColor="#f1c8a0"
-        android:inputType="number"
-        android:layout_below="@id/cbExtraordinaria"
-        android:layout_marginTop="16dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vistaTitulo" />
+
+    <TextView
+        android:id="@+id/vistaTitulo"
+        android:layout_width="300dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="92dp"
+        android:text="Gestionar mis ahorros"
+        android:textAlignment="center"
+        android:textColor="#f1c8a0"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnActivarAhorro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Activar Ahorro"
+        android:id="@+id/editar"
+        android:layout_width="262dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="100dp"
         android:background="#f5812b"
-        android:textColor="#f1c8a0"
-        android:layout_below="@id/etMonto"
-        android:layout_marginTop="16dp"/>
+        android:text="Ver mis ahorros"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user" />
 
-    <Button
-        android:id="@+id/btnDesactivarAhorro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Desactivar Ahorro"
-        android:background="#f5812b"
-        android:textColor="#f1c8a0"
-        android:layout_below="@id/btnActivarAhorro"
-        android:layout_marginTop="16dp"/>
-
-    <TextView
-        android:id="@+id/tvNavidena"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Navideña: ₡0"
-        android:textColor="#f1c8a0"
-        android:layout_below="@id/btnDesactivarAhorro"
-        android:layout_marginTop="16dp"/>
-
-    <TextView
-        android:id="@+id/tvEscolar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Escolar: ₡0"
-        android:textColor="#f1c8a0"
-        android:layout_below="@id/tvNavidena"
-        android:layout_marginTop="16dp"/>
-
-    <TextView
-        android:id="@+id/tvMarchamo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Marchamo: ₡0"
-        android:textColor="#f1c8a0"
-        android:layout_below="@id/tvEscolar"
-        android:layout_marginTop="16dp"/>
-
-    <TextView
-        android:id="@+id/tvExtraordinaria"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Extraordinaria: ₡0"
-        android:textColor="#f1c8a0"
-        android:layout_below  ="@id/tvMarchamo"
-        android:layout_marginTop="16dp"/>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

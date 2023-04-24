@@ -51,7 +51,7 @@
             android:name=".InformacionPersonal"
             android:exported="false" />
         <activity
-            android:name=".GestionarAhorros"
+            android:name=".GestionarAhorro"
             android:exported="false" />
     </application>
 
