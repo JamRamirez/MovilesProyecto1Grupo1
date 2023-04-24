@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculaCuota">
+
+    <TextView
+        android:id="@+id/CalculaCuota"
+        android:layout_width="216dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:text="Calcula Cuota"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="338dp"
+        android:layout_height="228dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CalculaCuota">
+
+        <RadioButton
+            android:id="@+id/rdHipotecario"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Hipotecario" />
+
+        <RadioButton
+            android:id="@+id/rdEducacion"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:text="Educacion" />
+
+        <RadioButton
+            android:id="@+id/Personal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Personal" />
+
+        <RadioButton
+            android:id="@+id/Viajes"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Viajes" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/periodo"
+        android:layout_width="289dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="4dp"
+        android:text="Periodo:"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="219dp"
+        android:layout_height="153dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/periodo">
+
+        <RadioButton
+            android:id="@+id/btn3"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="3 años" />
+
+        <RadioButton
+            android:id="@+id/btn5"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:text="5 años" />
+
+        <RadioButton
+            android:id="@+id/btn10"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="10 años" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edSalario"
+        android:layout_width="344dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Ingrese un monto"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+    <Button
+        android:id="@+id/btnCalcula"
+        android:layout_width="120dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="16dp"
+        android:text="Calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edSalario" />
+
+    <EditText
+        android:id="@+id/montoTotal"
+        android:layout_width="338dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Monto"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalcula" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
