@@ -20,9 +20,6 @@ class ControlAhorro : AppCompatActivity() {
         user = findViewById(R.id.user)
         edita = findViewById(R.id.editar)
 
-        val helper = MyDatabaseHelper(applicationContext)
-        val db = helper.readableDatabase
-
         edita.setOnClickListener {
             val intent = Intent(this,GestionarAhorro::class.java)
             intent.putExtra("clave",user.text.toString())

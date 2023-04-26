@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
-        private const val DATABASE_VERSION = 16
+        private const val DATABASE_VERSION = 17
         private const val DATABASE_NAME = "Proyecto1Grupo1.db"
 
         private const val TABLE_NAME = "cliente"
@@ -20,6 +20,12 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
         private const val COLUMN_CIVIL = "cliente_civil"
         private const val COLUMN_DIRECCION = "cliente_direccion"
         private const val COLUMN_NACIMIENTO = "cliente_nacimiento"
+
+
+        private const val COLUMN_TIPO = "TIPOAHORRO"
+        private const val COLUMN_MONTO = "MONTO"
+        private const val TABLE_AHORRO = "AHORRO"
+        private const val COLUMN_CLIENTE = "CLIENTEID"
 
     }
 
@@ -42,12 +48,18 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
         //Tabla PRESTAMO
         db.execSQL("CREATE TABLE PRESTAMO( ID INTEGER PRIMARY KEY AUTOINCREMENT, CEDULA INTEGER, PRESTAMO INTEGER, PERIODO INTEGER, CREDITO FLOAT, PAGO FLOAT, RESTANTES FLOAT)")
         db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('111',4000,36,12,132.85,4000)")
+
+
+        //Table Ahorro
+        db.execSQL("CREATE TABLE AHORRO( CEDULA INTEGER PRIMARY KEY, TIPOAHORRO TEXT, MONTO INTEGER, CLIENTEID INT)")
+        db.execSQL("INSERT INTO AHORRO(CEDULA,TIPOAHORRO,MONTO, CLIENTEID) VALUES(111,'Escolar', 10000, '111')")
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
         db.execSQL("DROP TABLE IF EXISTS USUARIO")
         db.execSQL("DROP TABLE IF EXISTS PRESTAMO")
+        db.execSQL("DROP TABLE IF EXISTS AHORRO")
         onCreate(db)
     }
 
@@ -104,6 +116,16 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
         val db = this.writableDatabase
         db.delete("PRESTAMO","ID = ?",args)
         close()
+    }
+
+    fun activarAhorro(monto: Int, tipoAhorro: String, cliente: Int) {
+        val db = writableDatabase
+        val values = ContentValues()
+        values.put(COLUMN_TIPO, tipoAhorro)
+        values.put(COLUMN_MONTO, monto)
+        values.put(COLUMN_CLIENTE, cliente)
+        db.insert(TABLE_AHORRO, null, values)
+        db.close()
     }
 
 }
