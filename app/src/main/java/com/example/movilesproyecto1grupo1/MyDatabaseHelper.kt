@@ -128,4 +128,30 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
         db.close()
     }
 
+    fun obtenerMontoAhorro(tipoAhorro: String, idCliente: Int): Int {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery(
+            "SELECT MONTO FROM AHORRO WHERE TIPOAHORRO = ? AND CLIENTEID = ?",
+            arrayOf(tipoAhorro, idCliente.toString())
+        )
+        var monto = 0
+        if (cursor.moveToFirst()) {
+            val columnIndex = cursor.getColumnIndex("MONTO")
+            if (columnIndex >= 0) {
+                monto = cursor.getInt(columnIndex)
+            }
+        }
+        cursor.close()
+        return monto
+    }
+    fun eliminarAhorro(tipoAhorro: String, idCliente: Int) {
+        val db = this.writableDatabase
+        val deleteQuery = "DELETE FROM AHORRO WHERE TIPOAHORRO = ? AND CLIENTEID = ?"
+        val whereArgs = arrayOf(tipoAhorro, idCliente.toString())
+
+        db.execSQL(deleteQuery, whereArgs)
+        db.close()
+    }
+
+
 }
