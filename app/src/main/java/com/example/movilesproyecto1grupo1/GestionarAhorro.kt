@@ -89,11 +89,23 @@ class GestionarAhorro : AppCompatActivity() {
             // Guardamos el monto en la base de datos
             val tipoAhorro = obtenerTipoAhorroSeleccionado()
             dbHelper.activarAhorro(monto, tipoAhorro, stringIdCliente.toInt())
+
+            // Actualizar los TextView con los montos de ahorro
+            ahorroNavidena = dbHelper.obtenerMontoAhorro(TIPO_AHORRO_NAVIDENA, stringIdCliente.toInt())
+            ahorroEscolar = dbHelper.obtenerMontoAhorro(TIPO_AHORRO_ESCOLAR, stringIdCliente.toInt())
+            ahorroMarchamo = dbHelper.obtenerMontoAhorro(TIPO_AHORRO_MARCHAMO, stringIdCliente.toInt())
+            ahorroExtraordinaria = dbHelper.obtenerMontoAhorro(TIPO_AHORRO_EXTRAORDINARIO, stringIdCliente.toInt())
+
+            tvNavidena.text = "Monto Navideña: $ahorroNavidena"
+            tvEscolar.text = "Monto Escolar: $ahorroEscolar"
+            tvMarchamo.text = "Monto Marchamo: $ahorroMarchamo"
+            tvExtraordinaria.text = "Monto Extraordinaria: $ahorroExtraordinaria"
         } else {
             // Mostramos un mensaje de error si el monto no es válido
             Toast.makeText(this, "El monto mínimo de ahorro es de 5000 colones", Toast.LENGTH_SHORT).show()
         }
     }
+
 
     private fun obtenerTipoAhorroSeleccionado(): String {
         when (rgOpciones.checkedRadioButtonId) {
@@ -106,27 +118,27 @@ class GestionarAhorro : AppCompatActivity() {
     }
 
     private fun desactivarAhorro() {
-        if (rbNavidena.isChecked) {
-            rbNavidena.isChecked = false
-            dbHelper.eliminarAhorro(TIPO_AHORRO_NAVIDENA, stringIdCliente.toInt())
-        }
-        if (rbEscolar.isChecked) {
-            rbEscolar.isChecked = false
-            dbHelper.eliminarAhorro(TIPO_AHORRO_ESCOLAR, stringIdCliente.toInt())
-        }
-        if (rbMarchamo.isChecked) {
-            rbMarchamo.isChecked = false
-            dbHelper.eliminarAhorro(TIPO_AHORRO_MARCHAMO, stringIdCliente.toInt())
-        }
-        if (rbExtraordinaria.isChecked) {
-            rbExtraordinaria.isChecked = false
-            dbHelper.eliminarAhorro(TIPO_AHORRO_EXTRAORDINARIO, stringIdCliente.toInt())
+            if (rbNavidena.isChecked) {
+                rbNavidena.isChecked = false
+                tvNavidena.text = "Monto Navideña: 0"
+                dbHelper.eliminarAhorro(TIPO_AHORRO_NAVIDENA, stringIdCliente.toInt())
+            }
+            if (rbEscolar.isChecked) {
+                rbEscolar.isChecked = false
+                tvEscolar.text = "Monto Escolar: 0"
+                dbHelper.eliminarAhorro(TIPO_AHORRO_ESCOLAR, stringIdCliente.toInt())
+            }
+            if (rbMarchamo.isChecked) {
+                rbMarchamo.isChecked = false
+                tvMarchamo.text = "Monto Marchamo: 0"
+                dbHelper.eliminarAhorro(TIPO_AHORRO_MARCHAMO, stringIdCliente.toInt())
+            }
+            if (rbExtraordinaria.isChecked) {
+                rbExtraordinaria.isChecked = false
+                tvExtraordinaria.text = "Monto Extraordinaria: 0"
+                dbHelper.eliminarAhorro(TIPO_AHORRO_EXTRAORDINARIO, stringIdCliente.toInt())
+            }
         }
 
-        tvNavidena.text = "Monto Navideña: 0"
-        tvEscolar.text = "Monto Escolar: 0"
-        tvMarchamo.text = "Monto Marchamo: 0"
-        tvExtraordinaria.text = "Monto Extraordinaria: 0"
+
     }
-    
-}
