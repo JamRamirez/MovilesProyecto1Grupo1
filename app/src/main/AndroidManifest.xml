@@ -15,6 +15,12 @@
             android:name=".VerPrestamos"
             android:exported="false" />
         <activity
+            android:name=".CalculaCuota"
+            android:exported="false" />
+        <activity
+            android:name=".AsignaAhorro"
+            android:exported="false" />
+        <activity
             android:name=".EditaCliente"
             android:exported="false" />
         <activity
@@ -47,9 +53,9 @@
         <activity
             android:name=".InformacionPersonal"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".GestionarAhorros"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".GestionarAhorro"
+            android:exported="false" />
     </application>
 
 </manifest>

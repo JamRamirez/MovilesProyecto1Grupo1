@@ -3,6 +3,7 @@ package com.example.movilesproyecto1grupo1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -29,12 +30,13 @@ class InformacionPersonal : AppCompatActivity() {
         val helper = MyDatabaseHelper(applicationContext)
         val db = helper.readableDatabase
 
+
         consulta.setOnClickListener {
+
             val selectionArgs = arrayOf(user.text.toString())
             val rs = db.rawQuery("SELECT * FROM cliente WHERE cliente_cedula = ?", selectionArgs)
 
             if (rs.moveToFirst()) {
-                Toast.makeText(applicationContext, "Cliente Encontrado!", Toast.LENGTH_LONG).show()
                 if (rs.moveToFirst()) {
                     do {
                         vista.append("Cédula: "+rs.getInt(0).toString()+"\n")
@@ -46,11 +48,7 @@ class InformacionPersonal : AppCompatActivity() {
 
                     } while (rs.moveToNext())
                 } else {
-                    Toast.makeText(
-                        applicationContext,
-                        "ERROR, Cliente No Existe!",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    Toast.makeText(applicationContext, "ERROR, Cliente No Existe!", Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -59,6 +57,5 @@ class InformacionPersonal : AppCompatActivity() {
             intent.putExtra("clave",user.text.toString())
             startActivity(intent)
         }
-
     }
 }

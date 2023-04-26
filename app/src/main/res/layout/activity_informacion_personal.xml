@@ -4,73 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InformacionPersonal"
-    android:background="#015c56">
+    android:background="#015c56"
+    tools:context=".InformacionPersonal">
 
     <Button
         android:id="@+id/btnConsultar"
         android:layout_width="262dp"
         android:layout_height="92dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:background="#f5812b"
         android:text="Consultar"
         android:textColor="#f1c8a0"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vistaInformacion" />
+        app:layout_constraintTop_toBottomOf="@+id/user" />
 
     <TextView
         android:id="@+id/vistaInformacion"
-        android:layout_width="386dp"
-        android:layout_height="297dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="376dp"
+        android:layout_height="209dp"
+        android:layout_marginTop="20dp"
+        android:background="#015c56"
         android:hint="informacion del cliente"
-        android:background="@color/black"
-        android:textColor="@color/white"
+        android:textColorHint="#f1c8a0"
         android:textAlignment="center"
+        android:textColor="#f1c8a0"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vistaTitulo" />
+        app:layout_constraintTop_toBottomOf="@+id/editar" />
 
     <EditText
         android:id="@+id/user"
-        android:layout_width="266dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="349dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Ingrese su cedula"
+        android:textAlignment="center"
+        android:textColor="#f1c8a0"
+        android:textColorHint="#f1c8a0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnConsultar" />
+        app:layout_constraintTop_toBottomOf="@+id/vistaTitulo" />
 
     <TextView
         android:id="@+id/vistaTitulo"
         android:layout_width="300dp"
         android:layout_height="43dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:text="Información de la cuenta"
         android:textAlignment="center"
-        android:textSize="25sp"
         android:textColor="#f1c8a0"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/editar"
-        android:layout_width="260dp"
-        android:layout_height="58dp"
+        android:layout_width="262dp"
+        android:layout_height="92dp"
         android:layout_marginTop="32dp"
-        android:text="Editar Info"
+        android:background="#f5812b"
+        android:text="Editar"
+        android:textColor="#f1c8a0"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user" />
+        app:layout_constraintTop_toBottomOf="@+id/btnConsultar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

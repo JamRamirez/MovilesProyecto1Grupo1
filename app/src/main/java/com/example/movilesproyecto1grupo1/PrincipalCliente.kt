@@ -13,6 +13,7 @@ class PrincipalCliente : AppCompatActivity() {
     private lateinit var verPrestamo: Button
     private var stringUser = ""
     private var stringCed = ""
+    private lateinit var cuota: Button
 
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +24,8 @@ class PrincipalCliente : AppCompatActivity() {
         stringCed = intent.getStringExtra("stringPass").toString()
 
         ahorros = findViewById(R.id.btnGestionAhorros)
+        informacion = findViewById(R.id.btnIformacionPersonal)
+        cuota = findViewById(R.id.btnCuota)
         verPrestamo = findViewById(R.id.btnPrestamos)
 
         ahorros.setOnClickListener {
@@ -43,11 +46,12 @@ class PrincipalCliente : AppCompatActivity() {
         Toast.makeText(this,dat,Toast.LENGTH_SHORT).show()*/
 
         informacion = findViewById(R.id.btnIformacionPersonal)
+        cuota.setOnClickListener {
+            startActivity(Intent(this, CalculaCuota::class.java))
+        }
 
         informacion.setOnClickListener {
             startActivity(Intent(this,InformacionPersonal::class.java))
         }
-
-
     }
 }
