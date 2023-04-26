@@ -1,6 +1,7 @@
 package com.example.movilesproyecto1grupo1
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -74,7 +75,9 @@ class VerPrestamos : AppCompatActivity() {
                 var PrestamoRestantes = rs.getString(rs.getColumnIndex("RESTANTES"))
                 var PrestamoPAGO = rs.getString(rs.getColumnIndex("PAGO"))
 
-                button.setText("Prestamo: " + PrestamoId + " Pagos restantes: " + PrestamoPERIODO + " Total Restante: " + PrestamoRestantes + " Pago Mensual: " + PrestamoPAGO)
+                button.setText("ID Prestamo: " + PrestamoId + " Pagos restantes: " + PrestamoPERIODO + " Total Restante: " + PrestamoRestantes + " Pago Mensual: " + PrestamoPAGO)
+                button.setBackgroundColor(Color.parseColor("#f5812b"))
+                button.setTextColor(Color.parseColor("#f1c8a0"))
                 button.layoutParams = params
                 linearLayout.addView(button)
 
@@ -123,7 +126,7 @@ class VerPrestamos : AppCompatActivity() {
             var PrestamoRestantes = rs.getString(rs.getColumnIndex("RESTANTES"))
             var PrestamoPAGO = rs.getString(rs.getColumnIndex("PAGO"))
 
-            button.setText("Prestamo: " + PrestamoId + " Pagos restantes: " + PrestamoPERIODO + " Total Restante: " + PrestamoRestantes + " Pago Mensual: " + PrestamoPAGO)
+            button.setText("ID Prestamo: " + PrestamoId + " Pagos restantes: " + PrestamoPERIODO + " Total Restante: " + PrestamoRestantes + " Pago Mensual: " + PrestamoPAGO)
 
             Toast.makeText(applicationContext,"Pago realizado con Exito",Toast.LENGTH_LONG).show()
 
