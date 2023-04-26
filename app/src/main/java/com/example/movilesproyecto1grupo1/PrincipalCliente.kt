@@ -31,7 +31,5 @@ class PrincipalCliente : AppCompatActivity() {
         informacion.setOnClickListener {
             startActivity(Intent(this,InformacionPersonal::class.java))
         }
-
-
     }
 }

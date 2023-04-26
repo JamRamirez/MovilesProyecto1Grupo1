@@ -70,7 +70,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="60dp"
         android:text="Pantalla Principal Cliente"
-        android:textColor="@color/black"
+        android:textColor="#f1c8a0"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

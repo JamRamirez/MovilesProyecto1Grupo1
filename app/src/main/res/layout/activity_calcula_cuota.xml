@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#015c56"
     tools:context=".CalculaCuota">
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
         android:hint="Calcula Cuota"
+        android:textColorHint="#f1c8a0"
         android:textAlignment="center"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,24 +33,28 @@
 
         <RadioButton
             android:id="@+id/rdHipotecario"
+            android:textColor="#f1c8a0"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:text="Hipotecario" />
 
         <RadioButton
             android:id="@+id/rdEducacion"
+            android:textColor="#f1c8a0"
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:text="Educacion" />
 
         <RadioButton
             android:id="@+id/Personal"
+            android:textColor="#f1c8a0"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:text="Personal" />
 
         <RadioButton
             android:id="@+id/Viajes"
+            android:textColor="#f1c8a0"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:text="Viajes" />
@@ -60,6 +66,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="4dp"
         android:text="Periodo:"
+        android:textColor="#f1c8a0"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
@@ -78,18 +85,21 @@
 
         <RadioButton
             android:id="@+id/btn3"
+            android:textColor="#f1c8a0"
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:text="3" />
 
         <RadioButton
             android:id="@+id/btn5"
+            android:textColor="#f1c8a0"
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:text="5" />
 
         <RadioButton
             android:id="@+id/btn10"
+            android:textColor="#f1c8a0"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:text="10" />
@@ -102,6 +112,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Ingrese un monto"
+        android:textColorHint="#f1c8a0"
+        android:textColor="#f1c8a0"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.447"
@@ -114,6 +126,8 @@
         android:layout_height="59dp"
         android:layout_marginTop="8dp"
         android:text="Calcular"
+        android:background="#f5812b"
+        android:textColor="#f1c8a0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,6 +140,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Monto"
+        android:textColorHint="#f1c8a0"
+        android:textColor="#f1c8a0"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
