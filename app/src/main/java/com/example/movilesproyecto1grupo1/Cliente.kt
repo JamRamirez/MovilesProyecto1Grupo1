@@ -1,5 +1,6 @@
 package com.example.movilesproyecto1grupo1
 
+import android.database.sqlite.SQLiteConstraintException
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -125,7 +126,16 @@ class Cliente : AppCompatActivity() {
         var dbCiv = civil.text.toString()
         var dbDir = direccion.text.toString()
 
-        this.clienteDBHelper.addCliente(dbCed, dbNom, dbsal,dbTel, dbCiv,dbDir, cumple)
+        try {
+            this.clienteDBHelper.addCliente(dbCed, dbNom, dbsal,dbTel, dbCiv,dbDir, cumple)
+        } catch (e: SQLiteConstraintException){
+            Toast.makeText(this, "ERROR Cedula: "+ cedula.text.toString() + " Ya Existe", Toast.LENGTH_LONG).show()
+        }catch (e: Exception) {
+            // Handle other exceptions here
+            Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+        }
+
+        Toast.makeText(this, "Cedula: "+ cedula.text.toString(), Toast.LENGTH_LONG).show()
 
 
     }

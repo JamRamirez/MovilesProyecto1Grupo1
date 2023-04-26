@@ -112,7 +112,7 @@ class AsignacionPrestamo : AppCompatActivity() {
         val helper = MyDatabaseHelper(applicationContext)
         val db = helper.readableDatabase
 
-        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO) VALUES('" + stringCed + "'," + credito +","+ meses +","+ interes +","+ pagoMensual +")")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('" + stringCed + "'," + credito +","+ meses +","+ interes +","+ pagoMensual +","+ credito +")")
         db.close()
 
         Toast.makeText(this, "EXITO Prestamo Registrado", Toast.LENGTH_SHORT).show()

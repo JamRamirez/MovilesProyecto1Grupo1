@@ -41,12 +41,16 @@ class IniciarSesion : AppCompatActivity() {
 
             }
             if(rsc.moveToNext()){
-                /*val intent = Intent(this,PrincipalCliente::class.java)
-                val dato = usern.text.toString()
-                intent.putExtra("username",dato)
-                 startActivity(intent)*/
+
+                val Intent = Intent(this, PrincipalCliente::class.java)
+                    val stringUser = usern.text.toString()
+                    val stringPass = passw.text.toString()
+                    Intent.putExtra("stringUser",stringUser)
+                    Intent.putExtra("stringPass",stringPass)
+
                 Toast.makeText(applicationContext,"Cliente",Toast.LENGTH_LONG).show()
                 startActivity(Intent(this,PrincipalCliente::class.java))
+                startActivity(Intent)
             }else{
                 Toast.makeText(applicationContext,"El usuario no existe",Toast.LENGTH_LONG).show()
             }

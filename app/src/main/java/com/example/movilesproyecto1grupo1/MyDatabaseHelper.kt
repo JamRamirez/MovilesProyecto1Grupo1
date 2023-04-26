@@ -2,13 +2,14 @@ package com.example.movilesproyecto1grupo1
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.sqlite.SQLiteConstraintException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
-        private const val DATABASE_VERSION = 11
+        private const val DATABASE_VERSION = 15
         private const val DATABASE_NAME = "Proyecto1Grupo1.db"
 
         private const val TABLE_NAME = "cliente"
@@ -23,8 +24,8 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-        var query = //Tabla Cliente
-            "CREATE TABLE $TABLE_NAME ( $COLUMN_CEDULA INTEGER, " +
+        var query = //Tabla CLIENTE
+            "CREATE TABLE $TABLE_NAME ( $COLUMN_CEDULA INTEGER PRIMARY KEY, " +
                     "$COLUMN_NOMBRE TEXT, $COLUMN_SALARIO INTEGER, $COLUMN_TELEFONO TEXT, " +
                     "$COLUMN_CIVIL TEXT, $COLUMN_DIRECCION TEXT, $COLUMN_NACIMIENTO TEXT);"
         db.execSQL(query)
@@ -38,9 +39,9 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
         db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('fabianali','fabi789','administrador',1)")
         db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('joseflores','jose456','cliente',1)")
 
-        //Tabla Prestamo
-        db.execSQL("CREATE TABLE PRESTAMO( CEDULA INTEGER, PRESTAMO INTEGER, PERIODO INTEGER, CREDITO FLOAT, PAGO FLOAT)")
-        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO) VALUES('111',4000,36,12,136.86)")
+        //Tabla PRESTAMO
+        db.execSQL("CREATE TABLE PRESTAMO( ID INTEGER PRIMARY KEY AUTOINCREMENT, CEDULA INTEGER, PRESTAMO INTEGER, PERIODO INTEGER, CREDITO FLOAT, PAGO FLOAT, RESTANTES FLOAT)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('111',4000,36,12,132.85,4000)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -63,8 +64,13 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
 
         val db = this.writableDatabase
 
-        db.insert(TABLE_NAME, null, datosCliente)
-        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('" + nombre + "', '" + cedulaString + "', 'cliente', 1)")
+        try {
+            db.insert(TABLE_NAME, null, datosCliente)
+            db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('" + nombre + "', '" + cedulaString + "', 'cliente', 1)")
+        } catch (e: SQLiteConstraintException) {
+            // Throw the exception here
+            throw SQLiteConstraintException("Error: Primary key already exists.")
+        }
         db.close()
     }
 
@@ -79,6 +85,24 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
         datos.put(COLUMN_NACIMIENTO, nacimiento)
         val db = this.writableDatabase
         db.update("cliente",datos,"cliente_cedula = ?",args)
+        close()
+    }
+
+    fun prestamoPago(periodo:Int, restantes: Float, idPrestamo: Int){
+        val args = arrayOf(idPrestamo.toString())
+        val datos = ContentValues()
+        datos.put("PERIODO",periodo)
+        datos.put("RESTANTES",restantes)
+        val db = this.writableDatabase
+        db.update("PRESTAMO",datos,"ID = ?",args)
+        close()
+    }
+
+    fun borrarPrestamo(idPrestamo: Int){
+        val args = arrayOf(idPrestamo.toString())
+
+        val db = this.writableDatabase
+        db.delete("PRESTAMO","ID = ?",args)
         close()
     }
 

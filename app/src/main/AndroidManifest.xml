@@ -12,6 +12,9 @@
         android:theme="@style/Theme.MovilesProyecto1Grupo1"
         tools:targetApi="31">
         <activity
+            android:name=".VerPrestamos"
+            android:exported="false" />
+        <activity
             android:name=".EditaCliente"
             android:exported="false" />
         <activity
@@ -44,9 +47,9 @@
         <activity
             android:name=".InformacionPersonal"
             android:exported="false" />
-        <activity
-            android:name=".GestionarAhorros"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".GestionarAhorros"-->
+<!--            android:exported="false" />-->
     </application>
 
 </manifest>
