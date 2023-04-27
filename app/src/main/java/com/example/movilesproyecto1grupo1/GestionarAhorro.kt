@@ -84,13 +84,13 @@ class GestionarAhorro : AppCompatActivity() {
 
     private fun activarAhorro() {
         val monto = etMonto.text.toString().toIntOrNull()
-        if (monto != null && monto >= 5000) {
-            // Validamos que el monto ingresado sea un número válido y mayor o igual a 5000
-            // Guardamos el monto en la base de datos
+        val radioButtonSelected = rgOpciones.checkedRadioButtonId != -1
+
+        if (monto != null && monto >= 5000 && radioButtonSelected) {
+
             val tipoAhorro = obtenerTipoAhorroSeleccionado()
             dbHelper.activarAhorro(monto, tipoAhorro, stringIdCliente.toInt())
 
-            // Actualizar los TextView con los montos de ahorro
             ahorroNavidena = dbHelper.obtenerMontoAhorro(TIPO_AHORRO_NAVIDENA, stringIdCliente.toInt())
             ahorroEscolar = dbHelper.obtenerMontoAhorro(TIPO_AHORRO_ESCOLAR, stringIdCliente.toInt())
             ahorroMarchamo = dbHelper.obtenerMontoAhorro(TIPO_AHORRO_MARCHAMO, stringIdCliente.toInt())
@@ -100,12 +100,19 @@ class GestionarAhorro : AppCompatActivity() {
             tvEscolar.text = "Monto Escolar: $ahorroEscolar"
             tvMarchamo.text = "Monto Marchamo: $ahorroMarchamo"
             tvExtraordinaria.text = "Monto Extraordinaria: $ahorroExtraordinaria"
+
+
+            etMonto.error = null
         } else {
-            // Mostramos un mensaje de error si el monto no es válido
-            Toast.makeText(this, "El monto mínimo de ahorro es de 5000 colones", Toast.LENGTH_SHORT).show()
+
+            if (!radioButtonSelected) {
+                Toast.makeText(this, "Seleccione un tipo de ahorro", Toast.LENGTH_SHORT).show()
+            }
+            if (monto == null || monto < 5000) {
+                etMonto.setError("El monto mínimo de ahorro es de 5000 colones")
+            }
         }
     }
-
 
     private fun obtenerTipoAhorroSeleccionado(): String {
         when (rgOpciones.checkedRadioButtonId) {
@@ -116,29 +123,30 @@ class GestionarAhorro : AppCompatActivity() {
             else -> return ""
         }
     }
-
     private fun desactivarAhorro() {
+        val radioButtonSelected = rgOpciones.checkedRadioButtonId != -1
+
+        if (radioButtonSelected) {
             if (rbNavidena.isChecked) {
-                rbNavidena.isChecked = false
                 tvNavidena.text = "Monto Navideña: 0"
                 dbHelper.eliminarAhorro(TIPO_AHORRO_NAVIDENA, stringIdCliente.toInt())
             }
             if (rbEscolar.isChecked) {
-                rbEscolar.isChecked = false
                 tvEscolar.text = "Monto Escolar: 0"
                 dbHelper.eliminarAhorro(TIPO_AHORRO_ESCOLAR, stringIdCliente.toInt())
             }
             if (rbMarchamo.isChecked) {
-                rbMarchamo.isChecked = false
                 tvMarchamo.text = "Monto Marchamo: 0"
                 dbHelper.eliminarAhorro(TIPO_AHORRO_MARCHAMO, stringIdCliente.toInt())
             }
             if (rbExtraordinaria.isChecked) {
-                rbExtraordinaria.isChecked = false
                 tvExtraordinaria.text = "Monto Extraordinaria: 0"
                 dbHelper.eliminarAhorro(TIPO_AHORRO_EXTRAORDINARIO, stringIdCliente.toInt())
             }
+            rgOpciones.clearCheck()
+        } else {
+            Toast.makeText(this, "Debe seleccionar un tipo de ahorro para desactivar", Toast.LENGTH_SHORT).show()
         }
-
-
     }
+
+}
