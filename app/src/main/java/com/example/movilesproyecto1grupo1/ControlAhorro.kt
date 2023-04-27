@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 
 class ControlAhorro : AppCompatActivity() {
@@ -19,14 +20,21 @@ class ControlAhorro : AppCompatActivity() {
         user = findViewById(R.id.user)
         edita = findViewById(R.id.editar)
 
+        val helper = MyDatabaseHelper(applicationContext)
+        val db = helper.readableDatabase
+
         edita.setOnClickListener {
-            if (user.text.toString().isNotBlank()) {
+            val selectionArgs = arrayOf(user.text.toString())
+            val rs = db.rawQuery("SELECT * FROM cliente WHERE cliente_cedula = ?", selectionArgs)
+
+            if(user.text.toString().isBlank()){
+                Toast.makeText(applicationContext, "El Campo cédula,vacio", Toast.LENGTH_SHORT).show()
+            }else if (rs.moveToNext()) {
                 val intent = Intent(this, GestionarAhorro::class.java)
                 intent.putExtra("clave", user.text.toString())
                 startActivity(intent)
-            } else {
-                user.error = "El campo cedula no puede estar vacío" // Establece el mensaje de error
-                user.requestFocus() // Solicita el foco en el campo de texto vacío
+            }else{
+                Toast.makeText(applicationContext, "Ha ingresado una cedula incorrecta", Toast.LENGTH_SHORT).show()
             }
         }
 
