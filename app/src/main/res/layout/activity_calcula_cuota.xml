@@ -114,7 +114,7 @@
         android:hint="Ingrese un monto"
         android:textColorHint="#f1c8a0"
         android:textColor="#f1c8a0"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,20 +132,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edSalario" />
-
-    <EditText
-        android:id="@+id/montoTotal"
-        android:layout_width="338dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Monto"
-        android:textColorHint="#f1c8a0"
-        android:textColor="#f1c8a0"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalcula" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

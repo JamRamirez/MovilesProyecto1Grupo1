@@ -16,8 +16,7 @@ class CalculaCuota : AppCompatActivity(){
     private lateinit var tipo:RadioGroup
     private lateinit var consul: Button
     private lateinit var tiempo: RadioGroup
-    private lateinit var monto: EditText
-    private lateinit var campo: EditText
+    private lateinit var mont: EditText
     private lateinit var hipo: RadioButton
     private lateinit var esco: RadioButton
     private lateinit var perso: RadioButton
@@ -31,8 +30,7 @@ class CalculaCuota : AppCompatActivity(){
         tipo = findViewById<RadioGroup>(R.id.radioGroup)
         consul = findViewById(R.id.btnCalcula)
         tiempo = findViewById<RadioGroup>(R.id.radioGroup2)
-        monto = findViewById(R.id.edSalario)
-        campo = findViewById(R.id.montoTotal)
+        mont = findViewById(R.id.edSalario)
         hipo = findViewById(R.id.rdHipotecario)
         esco = findViewById(R.id.rdEducacion)
         perso = findViewById(R.id.Personal)
@@ -40,13 +38,17 @@ class CalculaCuota : AppCompatActivity(){
         mostrar = findViewById(R.id.CalculaCuota)
 
 
+
         consul.setOnClickListener {
+            if(mont.text.toString().isEmpty()){
+                Toast.makeText(applicationContext,"el campo monto no puede estar vacio",Toast.LENGTH_LONG).show()
+            }else{
             var tipo = tipo.checkedRadioButtonId
             var auxT = findViewById<RadioButton>(tipo)
 
             var tiempo = tiempo.checkedRadioButtonId
             var auxTem = findViewById<RadioButton>(tiempo)
-            var axuMonto = monto.text.toString().toDouble()
+            var axuMonto = mont.text.toString().toDouble()
 
             if(auxT.text == "Hipotecario" && auxTem.text == "3"){
                 val transformaAnio= (auxTem.text.toString().toInt())*12
@@ -98,6 +100,7 @@ class CalculaCuota : AppCompatActivity(){
             }
 
         }
+        }
     }
     fun calculaCuota(mes:Int,porcentaje: Double, monto: Double){
         var meses = mes;
@@ -107,4 +110,6 @@ class CalculaCuota : AppCompatActivity(){
         var cuota =  (saldo / (sec1 / porcentaje)*100).roundToInt().toDouble()/100
         Toast.makeText(applicationContext,cuota.toString(),Toast.LENGTH_LONG).show()
     }
+
+
 }
