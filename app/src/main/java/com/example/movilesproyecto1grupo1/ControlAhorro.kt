@@ -25,7 +25,7 @@ class ControlAhorro : AppCompatActivity() {
                 intent.putExtra("clave", user.text.toString())
                 startActivity(intent)
             } else {
-                user.setError("El campo cedula no puede estar vacío") // Establece el mensaje de error
+                user.error = "El campo cedula no puede estar vacío" // Establece el mensaje de error
                 user.requestFocus() // Solicita el foco en el campo de texto vacío
             }
         }
