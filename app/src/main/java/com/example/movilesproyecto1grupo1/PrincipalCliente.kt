@@ -41,10 +41,6 @@ class PrincipalCliente : AppCompatActivity() {
             startActivity(Intent)
         }
 
-        /*val bundle = intent.extras
-        val dat = bundle?.getString("username")
-        Toast.makeText(this,dat,Toast.LENGTH_SHORT).show()*/
-
         informacion = findViewById(R.id.btnIformacionPersonal)
         cuota.setOnClickListener {
             startActivity(Intent(this, CalculaCuota::class.java))

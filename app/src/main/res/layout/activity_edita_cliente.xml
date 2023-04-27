@@ -112,7 +112,7 @@
         android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Fecha de Nacimiento"
+        android:hint="Fecha de Nacimiento"
         android:textAlignment="center"
         android:textColor="#f1c8a0"
         android:textColorHint="#f1c8a0"

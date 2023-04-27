@@ -36,7 +36,9 @@ class InformacionPersonal : AppCompatActivity() {
             val selectionArgs = arrayOf(user.text.toString())
             val rs = db.rawQuery("SELECT * FROM cliente WHERE cliente_cedula = ?", selectionArgs)
 
-            if (rs.moveToFirst()) {
+            if(user.text.toString().isBlank()){
+                Toast.makeText(applicationContext, "El Campo cédula,vacio", Toast.LENGTH_SHORT).show()
+            }else if (rs.moveToNext()) {
                 if (rs.moveToFirst()) {
                     do {
                         vista.append("Cédula: "+rs.getInt(0).toString()+"\n")
@@ -47,15 +49,26 @@ class InformacionPersonal : AppCompatActivity() {
                         vista.append("Dirección: "+rs.getString(5).toString()+"\n")
 
                     } while (rs.moveToNext())
-                } else {
-                    Toast.makeText(applicationContext, "ERROR, Cliente No Existe!", Toast.LENGTH_LONG).show()
                 }
+            }else{
+                Toast.makeText(applicationContext, "ERROR, Cliente No Existe!", Toast.LENGTH_SHORT).show()
             }
+            user.text.clear()
+            rs.close()
         }
         edita.setOnClickListener {
-            val intent = Intent(this,EditaCliente::class.java)
-            intent.putExtra("clave",user.text.toString())
-            startActivity(intent)
+            val selectionArgs = arrayOf(user.text.toString())
+            val rs = db.rawQuery("SELECT * FROM cliente WHERE cliente_cedula = ?", selectionArgs)
+
+            if(user.text.toString().isBlank()){
+                Toast.makeText(applicationContext, "El Campo cédula,vacio", Toast.LENGTH_SHORT).show()
+            }else if (rs.moveToNext()) {
+                val intent = Intent(this, EditaCliente::class.java)
+                intent.putExtra("clave", user.text.toString())
+                startActivity(intent)
+            }else{
+                Toast.makeText(applicationContext, "ERROR, Cliente No Existe!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

@@ -40,8 +40,11 @@ class IniciarSesion : AppCompatActivity() {
                 passw.setError("Campo contraseña requerido vacio")
             }
         }
+
+
+
         iniciaSesion.setOnClickListener {
-            val args= listOf<String>(usern.text.toString(),passw.text.toString()).toTypedArray()
+            val args= listOf<String>(usern.text.toString().lowercase(),passw.text.toString().lowercase()).toTypedArray()
             val rs = db. rawQuery("SELECT * FROM USUARIO WHERE USERNAME=? AND PASSWORD=? AND PRIVILEGIO ='administrador' AND ESTADO=1",args)
             val rsc = db. rawQuery("SELECT * FROM USUARIO WHERE USERNAME=? AND PASSWORD=? AND PRIVILEGIO ='cliente' AND ESTADO=1",args)
 
@@ -50,21 +53,24 @@ class IniciarSesion : AppCompatActivity() {
                 Toast.makeText(applicationContext,"Usuario Administrativo Ingresado",Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this,Administrative::class.java))
 
-            }
-            if(rsc.moveToNext()){
-
+            }else if(rsc.moveToNext()){
                 val Intent = Intent(this, PrincipalCliente::class.java)
                     val stringUser = usern.text.toString()
                     val stringPass = passw.text.toString()
                     Intent.putExtra("stringUser",stringUser)
                     Intent.putExtra("stringPass",stringPass)
 
-                Toast.makeText(applicationContext,"Cliente",Toast.LENGTH_LONG).show()
-                Toast.makeText(applicationContext,"Cliente Ingresado",Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,"Cliente",Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this,PrincipalCliente::class.java))
                 startActivity(Intent)
+            }else if(usern.text.toString().isBlank() && passw.text.toString().isBlank()){
+                Toast.makeText(applicationContext,"Los campos son Requeridos ",Toast.LENGTH_SHORT).show()
+            }else if(usern.text.toString().isBlank()){
+                Toast.makeText(applicationContext,"El campo username esta vacio",Toast.LENGTH_SHORT).show()
+            }else if(passw.text.toString().isBlank()){
+                Toast.makeText(applicationContext,"El password esta vacio",Toast.LENGTH_SHORT).show()
             }else{
-                data( usern,passw)
+                Toast.makeText(applicationContext,"La información ingresada es incorrecta",Toast.LENGTH_SHORT).show()
             }
             rs.close()
             rsc.close()
@@ -76,9 +82,5 @@ class IniciarSesion : AppCompatActivity() {
     private fun noData(editText: EditText) : Boolean {
         return editText.text.toString().isEmpty()
     }
-    private fun data(editText1: EditText,editText2: EditText){
-        if(editText1.text.isBlank() && editText2.text.isBlank()){
-           Toast.makeText(this,"Campos requeridos vacios",Toast.LENGTH_LONG).show()
-        }
-    }
+
 }

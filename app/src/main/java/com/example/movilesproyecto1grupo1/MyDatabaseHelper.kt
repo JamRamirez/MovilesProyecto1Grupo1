@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
-        private const val DATABASE_VERSION = 17
+        private const val DATABASE_VERSION = 19
         private const val DATABASE_NAME = "Proyecto1Grupo1.db"
 
         private const val TABLE_NAME = "cliente"
@@ -36,14 +36,71 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
                     "$COLUMN_CIVIL TEXT, $COLUMN_DIRECCION TEXT, $COLUMN_NACIMIENTO TEXT);"
         db.execSQL(query)
         db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
-                "VALUES('111','joseflores','100000','84748474','Soltero','Heredia, Costa Rica','1/1/1980')")
+                "VALUES('1111','marlenbadilla','1000000','81715181','Soltero','Heredia, Costa Rica','1/1/1999')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('2222','jamramirez','1500000','82728272','Casado','San Jose, Costa Rica','1/1/1998')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('3333','fabianali','1800000','83738373','Soltero','Alajuela, Costa Rica','1/1/1997')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('4444','jazminAlfaro','1000000','84748474','Casada','Cartago, Costa Rica','1/1/1996')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('5555','alexarojas','100000','85758575','Soltero','Guanacaste, Costa Rica','1/1/1995')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('6666','davidcorrales','100000','86768676','Casado','Limon, Costa Rica','1/1/1994')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('7777','sebastianvega','100000','87778777','Soltero','Heredia, Costa Rica','1/7/1993')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('8888','sofiavargas','100000','88788878','Casada','San jose, Costa Rica','1/6/1992')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('9999','thompsonbadilla','100000','89798979','Soltero','Limon, Costa Rica','1/5/1991')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('1010','vanessabarrantes','100000','80708070','Casada','Cartago, Costa Rica','1/1/1990')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('1212','cristianabarca','100000','88748975','Soltero','Heredia, Costa Rica','1/2/1980')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('1313','ceciliajimenez','100000','81818181','Cartago','Guanacaste, Costa Rica','1/3/1989')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('1414','melissanaranjo','100000','82728272','Soltero','Cartago, Costa Rica','1/5/1988')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('1515','monicagonzales','100000','83738373','Casada','Heredia, Costa Rica','1/6/1987')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('1616','abigailcontreras','100000','84746695','Soltera','Alajuela, Costa Rica','1/11/1986')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('1717','joseflores','100000','84748474','Soltero','Heredia, Costa Rica','1/1/1985')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('1818','gaelrobles','100000','85758575','Casado','Cartago, Costa Rica','1/12/1984')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('1919','valeriacruz','100000','83768676','Soltera','Limon, Costa Rica','1/5/1983')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('2020','juanrodriguez','100000','86895213','Casado','Heredia, Costa Rica','1/5/1982')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('2021','dylantorres','100000','85201374','Soltero','Cartago, Costa Rica','1/4/1981')")
+        db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
+                "VALUES('2022','josuemurillo','100000','89745623','Casado','Alajuela, Costa Rica','1/4/1980')")
+
 
         //Tabla USUARIO
         db.execSQL("CREATE TABLE USUARIO( ID INTEGER PRIMARY KEY AUTOINCREMENT, USERNAME TEXT, PASSWORD TEXT,PRIVILEGIO TEXT, ESTADO INTEGER)")
         db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('marlenbadilla','mar123','administrador',1)")
         db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('jamramirez','jam456','administrador',1)")
         db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('fabianali','fabi789','administrador',1)")
-        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('joseflores','jose456','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('jazminAlfaro','jazminAlfaro1','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('alexarojas','alexarojas2','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('davidcorrales','davidcorrales3','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('sebastianvega','sebastianvega4','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('sofiavargas','sofiavargas5','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('thompsonbadilla','thompsonbadilla6','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('vanessabarrantes','vanessabarrantes7','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('cristianabarca','cristianabarca8','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('ceciliajimenez','ceciliajimenez9','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('melissanaranjo','melissanaranjo10','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('monicagonzales','monicagonzales11','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('abigailcontreras','abigailcontreras12','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('gaelrobles','gaelrobles13','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('valeriacruz','valeriacruz14','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('juanrodriguez','juanrodriguez15','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('dylantorres','dylantorres16','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('josuemurillo','josuemurillo17','cliente',1)")
 
         //Tabla PRESTAMO
         db.execSQL("CREATE TABLE PRESTAMO( ID INTEGER PRIMARY KEY AUTOINCREMENT, CEDULA INTEGER, PRESTAMO INTEGER, PERIODO INTEGER, CREDITO FLOAT, PAGO FLOAT, RESTANTES FLOAT)")
