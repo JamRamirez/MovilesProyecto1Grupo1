@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
-        private const val DATABASE_VERSION = 19
+        private const val DATABASE_VERSION = 23
         private const val DATABASE_NAME = "Proyecto1Grupo1.db"
 
         private const val TABLE_NAME = "cliente"
@@ -42,7 +42,7 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
         db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
                 "VALUES('3333','fabianali','1800000','83738373','Soltero','Alajuela, Costa Rica','1/1/1997')")
         db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
-                "VALUES('4444','jazminAlfaro','1000000','84748474','Casada','Cartago, Costa Rica','1/1/1996')")
+                "VALUES('4444','jazminalfaro','1000000','84748474','Casada','Cartago, Costa Rica','1/1/1996')")
         db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
                 "VALUES('5555','alexarojas','100000','85758575','Soltero','Guanacaste, Costa Rica','1/1/1995')")
         db.execSQL("INSERT INTO cliente(cliente_cedula,cliente_nombre,cliente_salario,cliente_telefono,cliente_civil,cliente_direccion,cliente_nacimiento) " +
@@ -84,7 +84,7 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
         db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('marlenbadilla','mar123','administrador',1)")
         db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('jamramirez','jam456','administrador',1)")
         db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('fabianali','fabi789','administrador',1)")
-        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('jazminAlfaro','jazminAlfaro1','cliente',1)")
+        db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('jazminalfaro','jazminalfaro1','cliente',1)")
         db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('alexarojas','alexarojas2','cliente',1)")
         db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('davidcorrales','davidcorrales3','cliente',1)")
         db.execSQL("INSERT INTO USUARIO(USERNAME,PASSWORD,PRIVILEGIO,ESTADO) VALUES('sebastianvega','sebastianvega4','cliente',1)")
@@ -104,12 +104,24 @@ class MyDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NA
 
         //Tabla PRESTAMO
         db.execSQL("CREATE TABLE PRESTAMO( ID INTEGER PRIMARY KEY AUTOINCREMENT, CEDULA INTEGER, PRESTAMO INTEGER, PERIODO INTEGER, CREDITO FLOAT, PAGO FLOAT, RESTANTES FLOAT)")
-        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('111',4000,36,12,132.85,4000)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('4444',4000,36,12,132.85,4000)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('4444',3000,36,12,99.64,3000)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('4444',2500,36,8,78.34,2500)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('5555',4000,60,12,66.73,4000)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('4444',33333,120,12,478.23,33333)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('4444',4000,36,12,132.85,4000)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('4444',7777,36,7.5,241.91,7777)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('4444',11111,60,8,225.29,11111)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('9999',4000,36,12,132.85,4000)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('1515',4000,36,12,132.85,4000)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('1616',4000,36,12,132.85,4000)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('1717',4000,36,12,132.85,4000)")
+        db.execSQL("INSERT INTO PRESTAMO(CEDULA,PRESTAMO,PERIODO,CREDITO, PAGO, RESTANTES) VALUES('9999',4000,36,12,132.85,4000)")
 
 
         //Table Ahorro
         db.execSQL("CREATE TABLE AHORRO( CEDULA INTEGER PRIMARY KEY, TIPOAHORRO TEXT, MONTO INTEGER, CLIENTEID INT)")
-        db.execSQL("INSERT INTO AHORRO(CEDULA,TIPOAHORRO,MONTO, CLIENTEID) VALUES(111,'Escolar', 10000, '111')")
+        db.execSQL("INSERT INTO AHORRO(CEDULA,TIPOAHORRO,MONTO, CLIENTEID) VALUES(111,'Escolar', 10000, '1111')")
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
