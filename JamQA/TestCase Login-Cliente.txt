@@ -1,0 +1,29 @@
+Nombre: Login Cliente
+
+Descripción: 
+	Verificar que el Login para un Cliente sea funcional
+
+Pasos:
+	1- Abrir Aplicacion
+	2- Clic a InputText Username
+	3- Añadir un "Username" de un cliente existente
+	4- Clic en InputText Password
+	5- Ingresar la "Password" correspondiente de el cliente Ingresado
+	6- Clic a el botón INGRESAR
+
+Data: 
+	- Username:
+		1- alexarojas
+		2- davidcorrales
+		3- sebastianvega
+	- Password:
+		1- alexarojas2
+		2- davidcorrales3	
+		3- sebastianvega4
+
+Resultado Esperado:
+	Cuando se le dé Clic al botón INGRESAR la aplicación verificara los datos y al ser correctos la aplicación actualizara su Activity 
+	a la pantalla principal de Usuarios.
+
+Pre-Requisitos:
+	Haber creado una cuenta anteriormente

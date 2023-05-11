@@ -1,0 +1,30 @@
+Nombre: Login Administrador
+
+Descripcion:
+	Verificar la funcionalidad de Login con un usuario Administrador
+
+Pasos:
+	1- Abrir Aplicación
+	2- Clic a el InputText "Username"
+	3- Ingresar el Username de un usuario Administrador existente
+	4- Clic a el InputText "Password"
+	5- Ingresar el Password de el usuario Administrador correspondiente
+	6- Clic a el Botón "INGRESAR"
+
+Data:
+	Username:
+		1- marlenbadilla
+		2- jamramirez
+		3- fabianali
+	
+	Password:
+		1- mar123
+		2- jam456
+		3- fabi789
+
+Resultado Esperado:
+	Al utilizar el boton "INGRESAR" la aplicación verificará los datos ingresados, al estos ser correctos, la aplicación actualizará su Activity 
+	a la "Pantalla Administrador principal"
+
+Pre Requisitos:
+	Usuario Administrador previamente creado
